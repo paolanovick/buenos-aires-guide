@@ -1,135 +1,173 @@
-const neighborhoods = [
-  {
-    id: 1,
-    name: "Palermo",
-    description: "Bohemio, moderno y verde",
-    image:
-      "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=800&q=80",
-    slug: "palermo",
-  },
-  {
-    id: 2,
-    name: "San Telmo",
-    description: "Historia, tango y antigüedades",
-    image:
-      "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=800&q=80",
-    slug: "san-telmo",
-  },
-  {
-    id: 3,
-    name: "La Boca",
-    description: "Color, pasión y fútbol",
-    image:
-      "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=800&q=80",
-    slug: "la-boca",
-  },
-  {
-    id: 4,
-    name: "Recoleta",
-    description: "Elegancia y sofisticación",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
-    slug: "recoleta",
-  },
-  {
-    id: 5,
-    name: "Monserrat",
-    description: "Casco histórico de la ciudad",
-    image:
-      "https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?w=800&q=80",
-    slug: "monserrat",
-  },
-  {
-    id: 6,
-    name: "San Nicolás",
-    description: "Centro financiero y cultural",
-    image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80",
-    slug: "san-nicolas",
-  },
-  {
-    id: 7,
-    name: "Puerto Madero",
-    description: "Modernidad junto al río",
-    image:
-      "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=800&q=80",
-    slug: "puerto-madero",
-  },
-  {
-    id: 8,
-    name: "Belgrano",
-    description: "Barrio residencial con encanto",
-    image:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
-    slug: "belgrano",
-  },
-];
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { useState } from "react";
+import { neighborhoods } from "../../data/neighborhoods";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 const NeighborhoodsGrid = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
+    <section className="py-24 bg-bgLight overflow-hidden">
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
+        <div className="text-center">
           <span className="text-secondary text-sm font-medium tracking-widest uppercase">
             Explorá Buenos Aires
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">
             Barrios Imperdibles
           </h2>
-          <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Cada barrio tiene su propia personalidad. Descubrí la diversidad que
-            hace única a Buenos Aires.
-          </p>
+          <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
+      </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {neighborhoods.map((neighborhood) => (
-            <div
-              key={neighborhood.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-            >
-              {/* Imagen */}
-              <div className="relative h-80 overflow-hidden">
-                <img
-                  src={neighborhood.image}
-                  alt={neighborhood.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-              </div>
+      {/* Carousel - Full Width */}
+      <div className="relative pb-20">
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={1.1}
+          centeredSlides={true}
+          spaceBetween={15}
+          loop={true}
+          navigation={{
+            prevEl: ".neighborhoods-prev",
+            nextEl: ".neighborhoods-next",
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          breakpoints={{
+            640: { slidesPerView: 2.2, spaceBetween: 20 },
+            1024: { slidesPerView: 3.5, spaceBetween: 25 },
+            1280: { slidesPerView: 4, spaceBetween: 30 },
+          }}
+          className="neighborhoods-carousel"
+        >
+          {neighborhoods.map((neighborhood, index) => {
+            const isActive = index === activeIndex;
 
-              {/* Contenido */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl font-serif mb-2 group-hover:text-secondary transition-colors">
-                  {neighborhood.name}
-                </h3>
-                <p className="text-sm text-white/80 mb-4">
-                  {neighborhood.description}
-                </p>
-                <div className="flex items-center gap-2 text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">Explorar</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+            return (
+              <SwiperSlide key={neighborhood.id}>
+                <div
+                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out ${
+                    isActive ? "shadow-2xl z-20" : "shadow-xl opacity-70 z-10"
+                  }`}
+                  style={{
+                    transform: isActive
+                      ? "scaleX(1.08) scaleY(1.02)"
+                      : "scaleX(0.92) scaleY(0.98)",
+                  }}
+                >
+                  {/* Imagen */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
+                      isActive
+                        ? "h-[180px] sm:h-[200px]"
+                        : "h-[540px] sm:h-[520px] md:h-[470px]"
+                    }`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                    <img
+                      src={neighborhood.image}
+                      alt={neighborhood.name}
+                      className="w-full h-full object-cover"
                     />
-                  </svg>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+
+                  {/* Contenido */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
+                      isActive
+                        ? "h-[440px] sm:h-[400px] md:h-[350px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6"
+                        : "h-[80px] justify-center px-6"
+                    }`}
+                  >
+                    {/* Título */}
+                    <h3
+                      className={`font-serif text-primary uppercase tracking-wider transition-all duration-700 ${
+                        isActive
+                          ? "text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3"
+                          : "text-base sm:text-lg md:text-xl mb-0"
+                      }`}
+                    >
+                      {neighborhood.name}
+                    </h3>
+
+                    {/* Línea divisoria */}
+                    {isActive && (
+                      <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
+                    )}
+
+                    {/* Descripción */}
+                    {isActive && (
+                      <>
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2">
+                          {neighborhood.fullDescription}
+                        </p>
+
+                        {/* Botones */}
+                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full px-2 sm:px-4 mt-auto mb-4">
+                          <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
+                            Explorar
+                          </button>
+                          <button className="flex-1 border-2 border-primary hover:bg-primary hover:text-white text-primary py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
+                            Detalles
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex items-center justify-center gap-6 md:gap-8 mt-8">
+        <button
+          className="neighborhoods-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg"
+          aria-label="Previous"
+        >
+          <svg
+            className="w-5 h-5 md:w-6 md:h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <div className="text-primary font-medium text-base md:text-lg">
+          {activeIndex + 1} / {neighborhoods.length}
         </div>
+
+        <button
+          className="neighborhoods-next w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg"
+          aria-label="Next"
+        >
+          <svg
+            className="w-5 h-5 md:w-6 md:h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </div>
     </section>
   );
