@@ -1,91 +1,83 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import Button from "../shared/Button";
+
+const slides = [
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&q=80",
+    title: "Buenos Aires",
+    subtitle: "La París de Sudamérica",
+    description: "Descubrí la ciudad del tango, la cultura y la pasión",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=1920&q=80",
+    title: "Tango & Cultura",
+    subtitle: "El Alma Porteña",
+    description: "Viví la experiencia del tango en cada esquina",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1920&q=80",
+    title: "Arquitectura Única",
+    subtitle: "Historia en Cada Rincón",
+    description: "De lo colonial a lo moderno, una ciudad que enamora",
+  },
+];
 
 const Hero = () => {
-  const slides = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&q=80",
-      title: "Buenos Aires",
-      subtitle: "La Ciudad que Enamora",
-      description:
-        "Descubrí la elegancia europea con la calidez latinoamericana",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1920&q=80",
-      title: "Puerto Madero",
-      subtitle: "Modernidad junto al río",
-      description: "El barrio más joven y cosmopolita de la ciudad",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1542737081-bde28c5b79fb?w=1920&q=80",
-      title: "Recoleta",
-      subtitle: "Elegancia y cultura",
-      description: "Historia, arte y arquitectura europea",
-    },
-  ];
-
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative h-screen w-full">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
-        speed={1200}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop={true}
-        pagination={{
-          clickable: true,
-          bulletClass: "swiper-pagination-bullet-custom",
-          bulletActiveClass: "swiper-pagination-bullet-active-custom",
-        }}
-        navigation={{
-          nextEl: ".hero-button-next",
-          prevEl: ".hero-button-prev",
-        }}
         className="h-full w-full"
       >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-full">
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="relative h-full w-full">
               {/* Imagen de fondo */}
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.image})` }}
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover"
               />
 
               {/* Overlay oscuro */}
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-black/50"></div>
 
               {/* Contenido */}
               <div className="relative h-full flex items-center justify-center text-center px-6">
                 <div className="max-w-4xl">
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-4 animate-fade-in">
+                  <h1 className="text-5xl md:text-7xl font-serif text-white mb-4 animate-fade-in">
                     {slide.title}
                   </h1>
-                  <p className="text-2xl md:text-3xl text-secondary font-serif mb-6 animate-fade-in-delay-1">
+                  <p className="text-2xl md:text-3xl text-secondary font-light mb-6 animate-fade-in-delay-1">
                     {slide.subtitle}
                   </p>
-                  <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fade-in-delay-2">
+                  <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in-delay-2">
                     {slide.description}
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center animate-fade-in-delay-3">
-                    <Button variant="primary" size="lg">
-                      Explorar
-                    </Button>
-                    <Button variant="outline-light" size="lg">
-                      Ver más
-                    </Button>
+                    <button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
+                      Explorar Tours
+                    </button>
+                    <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-all border border-white/30">
+                      Contactar
+                    </button>
                   </div>
                 </div>
               </div>
@@ -94,54 +86,24 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      {/* Flechas de navegación */}
-      <button className="hero-button-prev absolute left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300">
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
-      <button className="hero-button-next absolute right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300">
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
-
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <div className="flex flex-col items-center gap-2 text-white">
+          <span className="text-sm font-medium">Scroll</span>
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
