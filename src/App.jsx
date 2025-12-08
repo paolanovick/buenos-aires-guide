@@ -1,12 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Hero from "./components/home/Hero";
+import Welcome from "./components/home/Welcome";
+import NeighborhoodsGrid from "./components/home/NeighborhoodsGrid";
+import TopPlaces from "./components/home/TopPlaces";
+import TangoSection from "./components/home/TangoSection";
 
 function HomePage() {
   return (
     <Layout>
       <Hero />
-      {/* Acá van a ir más secciones después */}
+      <Welcome />
+      <NeighborhoodsGrid />
+      <TopPlaces />
+      <TangoSection />
     </Layout>
   );
 }
