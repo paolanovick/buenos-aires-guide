@@ -78,11 +78,11 @@ const TopPlaces = () => {
 
                   {/* Contenido */}
                   <div
-                    className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
-                      isActive
-                        ? "h-[290px] sm:h-[350px] md:h-[340px] justify-start pt-6 sm:pt-8 px-4 sm:px-6 pb-4"
-                        : "h-[80px] justify-center px-6"
-                    }`}
+                  className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
+  isActive
+    ? "h-[290px] sm:h-[350px] md:h-[340px] justify-start pt-6 sm:pt-8 px-4 sm:px-6 pb-4"
+    : "h-[80px] justify-center px-6"
+}`}
                   >
                     {isActive && (
                       <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
@@ -125,7 +125,7 @@ const TopPlaces = () => {
                           {place.fullDescription[i18n.language]}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4 mb-2">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4">
                           <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded text-xs uppercase tracking-widest">
                             {t("places.btnMore")}
                           </button>
