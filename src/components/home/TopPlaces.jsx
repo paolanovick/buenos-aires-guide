@@ -59,7 +59,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[300px] sm:h-[220px] md:h-[200px]"
+                        ? "h-[250px] sm:h-[220px] md:h-[200px]"
                         : "h-[540px] sm:h-[520px] md:h-[470px]"
                     }`}
                   >
@@ -80,7 +80,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[320px] sm:h-[380px] md:h-[350px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6"
+                        ? "h-[370px] sm:h-[380px] md:h-[350px] justify-start pt-3 sm:pt-6 md:pt-8 px-4 sm:px-6"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
@@ -121,7 +121,7 @@ const TopPlaces = () => {
                       <>
                         <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
 
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2 line-clamp-6">
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-5 max-w-sm px-2 line-clamp-5">
                           {place.fullDescription[i18n.language]}
                         </p>
 
