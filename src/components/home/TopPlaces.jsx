@@ -13,7 +13,6 @@ const TopPlaces = () => {
 
   return (
     <section className="py-24 bg-white overflow-hidden">
-      {/* Header */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center">
         <span className="text-secondary text-sm font-medium tracking-widest uppercase">
           {t("places.subtitle")}
@@ -24,7 +23,6 @@ const TopPlaces = () => {
         <div className="w-20 h-1 bg-primary mx-auto"></div>
       </div>
 
-      {/* Carousel */}
       <div className="relative pb-2">
         <Swiper
           modules={[Navigation]}
@@ -55,7 +53,6 @@ const TopPlaces = () => {
                       : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 z-10 opacity-80"
                   }`}
                 >
-                  {/* Imagen */}
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive
@@ -70,13 +67,11 @@ const TopPlaces = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
-                    {/* Badge */}
                     <div className="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-xs">
                       {place.type[i18n.language]}
                     </div>
                   </div>
 
-                  {/* Contenido */}
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
@@ -84,7 +79,6 @@ const TopPlaces = () => {
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
-                    {/* Ubicación */}
                     {isActive && (
                       <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
                         <svg
@@ -106,7 +100,6 @@ const TopPlaces = () => {
                       </div>
                     )}
 
-                    {/* Título */}
                     <h3
                       className={`font-serif text-primary uppercase tracking-wider transition-all duration-700 ${
                         isActive
@@ -142,7 +135,6 @@ const TopPlaces = () => {
           })}
         </Swiper>
 
-        {/* Navigation */}
         <div className="flex items-center justify-center gap-6 md:gap-8 mt-4 md:mt-8 pb-4 relative">
           <button className="places-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg">
             <svg
