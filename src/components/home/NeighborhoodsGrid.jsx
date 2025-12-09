@@ -24,8 +24,8 @@ const NeighborhoodsGrid = () => {
         </div>
       </div>
 
-      {/* Carousel - Full Width */}
-      <div className="relative pb-20">
+      {/* Carousel + Navigation Container */}
+      <div className="relative pb-6">
         <Swiper
           modules={[Navigation]}
           slidesPerView={1.1}
@@ -38,9 +38,9 @@ const NeighborhoodsGrid = () => {
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           breakpoints={{
-            640: { slidesPerView: 2.2, spaceBetween: 20 },
-            1024: { slidesPerView: 3.5, spaceBetween: 25 },
-            1280: { slidesPerView: 4, spaceBetween: 30 },
+            640: { slidesPerView: 2.5, spaceBetween: 20 },
+            1024: { slidesPerView: 3.8, spaceBetween: 25 },
+            1280: { slidesPerView: 4.5, spaceBetween: 30 },
           }}
           className="neighborhoods-carousel"
         >
@@ -50,14 +50,12 @@ const NeighborhoodsGrid = () => {
             return (
               <SwiperSlide key={neighborhood.id}>
                 <div
-                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out ${
-                    isActive ? "shadow-2xl z-20" : "shadow-xl opacity-70 z-10"
-                  }`}
-                  style={{
-                    transform: isActive
-                      ? "scaleX(1.08) scaleY(1.02)"
-                      : "scaleX(0.92) scaleY(0.98)",
-                  }}
+                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out mb-20
+                    ${
+                      isActive
+                        ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.06] z-20"
+                        : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 z-10 opacity-80"
+                    }`}
                 >
                   {/* Imagen */}
                   <div
@@ -94,19 +92,14 @@ const NeighborhoodsGrid = () => {
                       {neighborhood.name}
                     </h3>
 
-                    {/* Línea divisoria */}
-                    {isActive && (
-                      <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
-                    )}
-
-                    {/* Descripción */}
                     {isActive && (
                       <>
+                        <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
+
                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2">
                           {neighborhood.fullDescription}
                         </p>
 
-                        {/* Botones */}
                         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full px-2 sm:px-4 mt-auto mb-4">
                           <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
                             Explorar
@@ -123,51 +116,45 @@ const NeighborhoodsGrid = () => {
             );
           })}
         </Swiper>
-      </div>
 
-      {/* Navigation */}
-      <div className="flex items-center justify-center gap-6 md:gap-8 mt-8">
-        <button
-          className="neighborhoods-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg"
-          aria-label="Previous"
-        >
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
+        {/* Navigation */}
+        <div className="flex items-center justify-center gap-6 md:gap-8 mt-8 pb-4 relative">
+          <button className="neighborhoods-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg">
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
 
-        <div className="text-primary font-medium text-base md:text-lg">
-          {activeIndex + 1} / {neighborhoods.length}
+          <div className="text-primary font-medium text-base md:text-lg">
+            {activeIndex + 1} / {neighborhoods.length}
+          </div>
+
+          <button className="neighborhoods-next w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg">
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
-
-        <button
-          className="neighborhoods-next w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg"
-          aria-label="Next"
-        >
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
     </section>
   );
