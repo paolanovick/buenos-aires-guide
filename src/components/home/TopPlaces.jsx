@@ -49,7 +49,7 @@ const TopPlaces = () => {
             return (
               <SwiperSlide key={place.id}>
                 <div
-                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg transition-all duration-700 ease-out mb-20 overflow-hidden ${
+                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out mb-20 ${
                     isActive
                       ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.07] z-20"
                       : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 opacity-70 z-10"
@@ -59,8 +59,8 @@ const TopPlaces = () => {
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[280px] sm:h-[250px] md:h-[200px]"
-                        : "h-[470px]"
+                        ? "h-[300px] sm:h-[220px] md:h-[200px]"
+                        : "h-[540px] sm:h-[520px] md:h-[470px]"
                     }`}
                   >
                     <img
@@ -80,12 +80,13 @@ const TopPlaces = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[340px] sm:h-[350px] md:h-[340px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6 pb-4"
+                        ? "h-[320px] sm:h-[380px] md:h-[350px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
+                    {/* Ubicación */}
                     {isActive && (
-                      <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+                      <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
                         <svg
                           className="w-4 h-4"
                           fill="none"
@@ -105,31 +106,30 @@ const TopPlaces = () => {
                       </div>
                     )}
 
+                    {/* Título */}
                     <h3
                       className={`font-serif text-primary uppercase tracking-wider transition-all duration-700 ${
                         isActive
-                          ? "text-xl md:text-2xl mb-3"
-                          : "text-lg md:text-xl mb-0"
+                          ? "text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3"
+                          : "text-base sm:text-lg md:text-xl mb-0"
                       }`}
                     >
                       {place.name[i18n.language]}
                     </h3>
 
                     {isActive && (
-                      <div className="w-12 h-0.5 bg-primary mb-4"></div>
-                    )}
-
-                    {isActive && (
                       <>
-                        <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 max-w-sm px-2 line-clamp-4">
+                        <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
+
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2 line-clamp-6">
                           {place.fullDescription[i18n.language]}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4">
-                          <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded text-xs uppercase tracking-widest">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4 mb-2">
+                          <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
                             {t("places.btnMore")}
                           </button>
-                          <button className="flex-1 border-2 border-primary hover:bg-primary hover:text-white text-primary py-2 px-4 rounded text-xs uppercase tracking-widest">
+                          <button className="flex-1 border-2 border-primary hover:bg-primary hover:text-white text-primary py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
                             {t("places.btnDetails")}
                           </button>
                         </div>
@@ -141,45 +141,45 @@ const TopPlaces = () => {
             );
           })}
         </Swiper>
-      </div>
 
-      {/* Navigation */}
-      <div className="flex items-center justify-center gap-6 md:gap-8 mt-2 md:mt-4">
-        <button className="places-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all bg-white shadow-lg">
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
+        {/* Navigation */}
+        <div className="flex items-center justify-center gap-6 md:gap-8 mt-4 md:mt-8 pb-4 relative">
+          <button className="places-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg">
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
 
-        <div className="text-primary font-medium text-base md:text-lg">
-          {activeIndex + 1} / {topPlaces.length}
+          <div className="text-primary font-medium text-base md:text-lg">
+            {activeIndex + 1} / {topPlaces.length}
+          </div>
+
+          <button className="places-next w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg">
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
-
-        <button className="places-next w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all bg-white shadow-lg">
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
     </section>
   );
