@@ -27,7 +27,7 @@ const NeighborhoodsGrid = () => {
       </div>
 
       {/* Carousel + Navigation Container */}
-      <div className="relative pb-6">
+      <div className="relative pb-2">
         <Swiper
           modules={[Navigation]}
           slidesPerView={1.1}
@@ -104,7 +104,7 @@ const NeighborhoodsGrid = () => {
                             neighborhood.fullDescription.es}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full px-2 sm:px-4 mt-auto mb-4">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4 mb-2">
                           <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
                             {t("neighborhoods.btnExplore")}
                           </button>
@@ -122,7 +122,7 @@ const NeighborhoodsGrid = () => {
         </Swiper>
 
         {/* Navigation */}
-        <div className="flex items-center justify-center gap-6 md:gap-8 mt-8 pb-4 relative">
+        <div className="flex items-center justify-center gap-6 md:gap-8 mt-4 md:mt-8 pb-4 relative">
           <button className="neighborhoods-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all flex items-center justify-center bg-white shadow-lg">
             <svg
               className="w-5 h-5 md:w-6 md:h-6"

@@ -25,7 +25,7 @@ const TopPlaces = () => {
       </div>
 
       {/* Carousel */}
-      <div className="relative pb-10">
+      <div className="relative pb-2">
         <Swiper
           modules={[Navigation]}
           slidesPerView={1.1}
@@ -80,7 +80,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[290px] sm:h-[350px] md:h-[340px] justify-start pt-6 sm:pt-8 px-4 sm:px-6"
+                        ? "h-[290px] sm:h-[350px] md:h-[340px] justify-start pt-6 sm:pt-8 px-4 sm:px-6 pb-4"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
@@ -125,7 +125,7 @@ const TopPlaces = () => {
                           {place.fullDescription[i18n.language]}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full px-4 mb-2">
                           <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded text-xs uppercase tracking-widest">
                             {t("places.btnMore")}
                           </button>
@@ -144,7 +144,7 @@ const TopPlaces = () => {
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-center gap-6 md:gap-8 mt-4">
+      <div className="flex items-center justify-center gap-6 md:gap-8 mt-2 md:mt-4">
         <button className="places-prev w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary hover:bg-primary hover:text-white text-primary transition-all bg-white shadow-lg">
           <svg
             className="w-5 h-5 md:w-6 md:h-6"
