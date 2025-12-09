@@ -1,0 +1,74 @@
+{
+  "header": {
+    "home": "Home",
+    "welcome": "Welcome",
+    "neighborhoods": "Neighborhoods",
+    "places": "Places",
+    "tango": "Tango"
+  },
+  "hero": {
+    "slide1_title": "Buenos Aires",
+    "slide1_subtitle": "The Paris of South America",
+    "slide1_description": "Discover the city of tango, culture and passion",
+    "slide2_title": "Tango & Culture",
+    "slide2_subtitle": "The Soul of Buenos Aires",
+    "slide2_description": "Experience tango on every corner",
+    "slide3_title": "Unique Architecture",
+    "slide3_subtitle": "History in Every Corner",
+    "slide3_description": "From colonial to modern, a city that captivates",
+    "btn1": "Explore Tours",
+    "btn2": "Contact",
+    "scroll": "Scroll"
+  },
+  "welcome": {
+    "subtitle": "Welcome",
+    "title": "Discover Buenos Aires with me",
+    "intro": "Hi! I'm <strong>Miguel Murdoch</strong>, your tour guide in Buenos Aires. With over 15 years of experience, I invite you to explore the best-kept secrets of this fascinating city.",
+    "paragraph1": "Buenos Aires is a city that captivates: its neighborhoods full of history, its passionate tango, its world-class gastronomy, and its warm people will charm you from the first moment.",
+    "paragraph2": "Whether you're looking for the elegance of Recoleta, the bohemian vibe of San Telmo, the color of La Boca, or the modernity of Palermo, I have the perfect tour for you.",
+    "feature1_title": "Personalized Tours",
+    "feature1_desc": "Adapted to your interests and pace",
+    "feature2_title": "Flexible Schedule",
+    "feature2_desc": "Morning, afternoon or evening - you choose",
+    "feature3_title": "Bilingual ES/EN",
+    "feature3_desc": "Tours in Spanish and English",
+    "cta": "Contact Me"
+  },
+  "neighborhoods": {
+    "subtitle": "Explore Buenos Aires",
+    "title": "Must-See Neighborhoods",
+    "btnExplore": "Explore",
+    "btnDetails": "Details"
+  },
+  "places": {
+    "subtitle": "The Best of Buenos Aires",
+    "title": "Most Visited Places",
+    "btnMore": "See More",
+    "btnDetails": "Details"
+  },
+  "tango": {
+    "subtitle": "The Soul of Buenos Aires",
+    "title": "Buenos Aires Tango",
+    "intro": "Tango is much more than a dance: it's the soul of Buenos Aires. Born in the suburbs, it grew among guitars, bandoneons, and intense embraces.",
+    "paragraph": "Today, Buenos Aires tango vibrates in every milonga, every corner, and every glance exchanged on the dance floor. It's nostalgia and celebration, tradition and reinvention.",
+    "btnShows": "See Tango Shows",
+    "btnLearn": "Learn to Dance",
+    "stat1": "Milongas",
+    "stat2": "Shows",
+    "stat3": "Since"
+  },
+  "footer": {
+    "about": "About Us",
+    "aboutDesc": "Professional tour guide with over 15 years of experience in Buenos Aires.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "usefulPhones": "Useful Phones",
+    "emergency": "Emergency",
+    "police": "Police",
+    "ambulance": "Ambulance",
+    "tourism": "Tourist Information",
+    "copyright": "© 2024 Buenos Aires Guide. All rights reserved."
+  }
+}

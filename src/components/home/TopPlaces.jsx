@@ -2,22 +2,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useState } from "react";
 import { topPlaces } from "../../data/neighborhoods";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 const TopPlaces = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t, i18n } = useTranslation();
 
   return (
     <section className="py-24 bg-white overflow-hidden">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center">
         <span className="text-secondary text-sm font-medium tracking-widest uppercase">
-          Lo Mejor de Buenos Aires
+          {t("places.subtitle")}
         </span>
         <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">
-          Lugares Más Visitados
+          {t("places.title")}
         </h2>
         <div className="w-20 h-1 bg-primary mx-auto"></div>
       </div>
@@ -47,29 +49,30 @@ const TopPlaces = () => {
             return (
               <SwiperSlide key={place.id}>
                 <div
-                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg transition-all duration-700 ease-out mb-20 overflow-hidden
-                    ${
-                      isActive
-                        ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.07] z-20"
-                        : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 opacity-70 z-10"
-                    }`}
+                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg transition-all duration-700 ease-out mb-20 overflow-hidden ${
+                    isActive
+                      ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.07] z-20"
+                      : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 opacity-70 z-10"
+                  }`}
                 >
                   {/* Imagen */}
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
-                      isActive ? "h-[200px]" : "h-[470px]"
+                      isActive
+                        ? "h-[330px] sm:h-[250px] md:h-[200px]"
+                        : "h-[470px]"
                     }`}
                   >
                     <img
                       src={place.image}
-                      alt={place.name}
+                      alt={place.name[i18n.language]}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                     {/* Badge */}
                     <div className="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-xs">
-                      {place.type}
+                      {place.type[i18n.language]}
                     </div>
                   </div>
 
@@ -77,7 +80,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[350px] justify-start pt-8 px-6"
+                        ? "h-[290px] sm:h-[350px] md:h-[340px] justify-start pt-6 sm:pt-8 px-4 sm:px-6"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
@@ -98,7 +101,7 @@ const TopPlaces = () => {
                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           />
                         </svg>
-                        <span>{place.neighborhood}</span>
+                        <span>{place.neighborhood[i18n.language]}</span>
                       </div>
                     )}
 
@@ -109,7 +112,7 @@ const TopPlaces = () => {
                           : "text-lg md:text-xl mb-0"
                       }`}
                     >
-                      {place.name}
+                      {place.name[i18n.language]}
                     </h3>
 
                     {isActive && (
@@ -118,16 +121,16 @@ const TopPlaces = () => {
 
                     {isActive && (
                       <>
-                        <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6 max-w-sm px-2">
-                          {place.fullDescription}
+                        <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6 max-w-sm px-2 line-clamp-6">
+                          {place.fullDescription[i18n.language]}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-3 w-full px-4">
                           <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded text-xs uppercase tracking-widest">
-                            Ver Más
+                            {t("places.btnMore")}
                           </button>
                           <button className="flex-1 border-2 border-primary hover:bg-primary hover:text-white text-primary py-2 px-4 rounded text-xs uppercase tracking-widest">
-                            Detalles
+                            {t("places.btnDetails")}
                           </button>
                         </div>
                       </>

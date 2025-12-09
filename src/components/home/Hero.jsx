@@ -1,42 +1,44 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-const slides = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&q=80",
-    title: "Buenos Aires",
-    subtitle: "La París de Sudamérica",
-    description: "Descubrí la ciudad del tango, la cultura y la pasión",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=1920&q=80",
-    title: "Tango & Cultura",
-    subtitle: "El Alma Porteña",
-    description: "Viví la experiencia del tango en cada esquina",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1920&q=80",
-    title: "Arquitectura Única",
-    subtitle: "Historia en Cada Rincón",
-    description: "De lo colonial a lo moderno, una ciudad que enamora",
-  },
-];
-
 const Hero = () => {
+  const { t } = useTranslation();
+
+  const slides = [
+    {
+      id: 1,
+      image:
+        "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&q=80",
+      title: t("hero.slide1_title"),
+      subtitle: t("hero.slide1_subtitle"),
+      description: t("hero.slide1_description"),
+    },
+    {
+      id: 2,
+      image:
+        "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=1920&q=80",
+      title: t("hero.slide2_title"),
+      subtitle: t("hero.slide2_subtitle"),
+      description: t("hero.slide2_description"),
+    },
+    {
+      id: 3,
+      image:
+        "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1920&q=80",
+      title: t("hero.slide3_title"),
+      subtitle: t("hero.slide3_subtitle"),
+      description: t("hero.slide3_description"),
+    },
+  ];
+
   return (
-    <div className="relative h-screen w-full">
+    <div id="hero" className="relative h-screen w-full">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
@@ -49,17 +51,14 @@ const Hero = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative h-full w-full">
-              {/* Imagen de fondo */}
               <img
                 src={slide.image}
                 alt={slide.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Overlay oscuro */}
               <div className="absolute inset-0 bg-black/50"></div>
 
-              {/* Contenido */}
               <div className="relative h-full flex items-center justify-center text-center px-6">
                 <div className="max-w-4xl">
                   <h1 className="text-5xl md:text-7xl font-serif text-white mb-4 animate-fade-in">
@@ -73,10 +72,10 @@ const Hero = () => {
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center animate-fade-in-delay-3">
                     <button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
-                      Explorar Tours
+                      {t("hero.btn1")}
                     </button>
                     <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-all border border-white/30">
-                      Contactar
+                      {t("hero.btn2")}
                     </button>
                   </div>
                 </div>
@@ -86,10 +85,9 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
         <div className="flex flex-col items-center gap-2 text-white">
-          <span className="text-sm font-medium">Scroll</span>
+          <span className="text-sm font-medium">{t("hero.scroll")}</span>
           <svg
             className="w-6 h-6"
             fill="none"

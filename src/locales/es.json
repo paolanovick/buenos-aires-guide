@@ -1,0 +1,77 @@
+{
+  "header": {
+    "home": "Inicio",
+    "welcome": "Bienvenida",
+    "neighborhoods": "Barrios",
+    "places": "Lugares",
+    "tango": "Tango"
+  },
+  "hero": {
+    "title": "Descubrí Buenos Aires",
+    "subtitle": "La ciudad que nunca duerme",
+    "cta": "Explorar",
+   "slide1_title": "Buenos Aires",
+  "slide1_subtitle": "La París de Sudamérica",
+  "slide1_description": "Descubrí la ciudad del tango, la cultura y la pasión",
+  "slide2_title": "Tango & Cultura",
+  "slide2_subtitle": "El Alma Porteña",
+  "slide2_description": "Viví la experiencia del tango en cada esquina",
+  "slide3_title": "Arquitectura Única",
+  "slide3_subtitle": "Historia en Cada Rincón",
+  "slide3_description": "De lo colonial a lo moderno, una ciudad que enamora",
+  "btn1": "Explorar Tours",
+  "btn2": "Contactar",
+  "scroll": "Scroll"
+  },
+  "welcome": {
+    "subtitle": "Bienvenidos",
+    "title": "Descubrí Buenos Aires conmigo",
+    "intro": "¡Hola! Soy <strong>Miguel Murdoch</strong>, tu guía turístico en Buenos Aires. Con más de 15 años de experiencia, te invito a explorar los secretos mejor guardados de esta fascinante ciudad.",
+    "paragraph1": "Buenos Aires es una ciudad que enamora: sus barrios llenos de historia, su tango apasionado, su gastronomía de clase mundial y su gente cálida te cautivarán desde el primer momento.",
+    "paragraph2": "Ya sea que estés buscando la elegancia de Recoleta, la bohemia de San Telmo, el color de La Boca o la modernidad de Palermo, tengo el tour perfecto para vos.",
+    "feature1_title": "Tours personalizados",
+    "feature1_desc": "Adaptados a tus intereses y ritmo",
+    "feature2_title": "Horarios flexibles",
+    "feature2_desc": "Mañana, tarde o noche - vos elegís",
+    "feature3_title": "Bilingüe ES/EN",
+    "feature3_desc": "Tours en español e inglés",
+    "cta": "Contactame"
+  },
+  "neighborhoods": {
+    "subtitle": "Explorá Buenos Aires",
+    "title": "Barrios Imperdibles",
+    "btnExplore": "Explorar",
+    "btnDetails": "Detalles"
+  },
+  "places": {
+    "subtitle": "Lo Mejor de Buenos Aires",
+    "title": "Lugares Más Visitados",
+    "btnMore": "Ver Más",
+    "btnDetails": "Detalles"
+  },
+  "tango": {
+    "subtitle": "El Alma de Buenos Aires",
+    "title": "Tango Porteño",
+    "intro": "El tango es mucho más que una danza: es el alma de Buenos Aires. Nacido en los arrabales, creció entre guitarras, bandoneones y abrazos intensos.",
+    "paragraph": "Hoy, el tango porteño vibra en cada milonga, cada esquina y cada mirada que se cruza en la pista. Es nostalgia y celebración, tradición y reinvención.",
+    "btnShows": "Ver Shows de Tango",
+    "btnLearn": "Aprender a Bailar",
+    "stat1": "Milongas",
+    "stat2": "Shows",
+    "stat3": "Desde"
+  },
+  "footer": {
+    "about": "Sobre Nosotros",
+    "aboutDesc": "Guía turístico profesional con más de 15 años de experiencia en Buenos Aires.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "phone": "Teléfono",
+    "email": "Email",
+    "usefulPhones": "Teléfonos Útiles",
+    "emergency": "Emergencias",
+    "police": "Policía",
+    "ambulance": "Ambulancia",
+    "tourism": "Información Turística",
+    "copyright": "© 2024 Buenos Aires Guide. Todos los derechos reservados."
+  }
+}

@@ -2,12 +2,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useState } from "react";
 import { neighborhoods } from "../../data/neighborhoods";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 const NeighborhoodsGrid = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t, i18n } = useTranslation();
 
   return (
     <section className="py-24 bg-bgLight overflow-hidden">
@@ -15,10 +17,10 @@ const NeighborhoodsGrid = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
         <div className="text-center">
           <span className="text-secondary text-sm font-medium tracking-widest uppercase">
-            Explorá Buenos Aires
+            {t("neighborhoods.subtitle")}
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">
-            Barrios Imperdibles
+            {t("neighborhoods.title")}
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
@@ -50,24 +52,25 @@ const NeighborhoodsGrid = () => {
             return (
               <SwiperSlide key={neighborhood.id}>
                 <div
-                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out mb-20
-                    ${
-                      isActive
-                        ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.06] z-20"
-                        : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 z-10 opacity-80"
-                    }`}
+                  className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out mb-20 ${
+                    isActive
+                      ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.06] z-20"
+                      : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 z-10 opacity-80"
+                  }`}
                 >
                   {/* Imagen */}
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[180px] sm:h-[200px]"
+                        ? "h-[300px] sm:h-[220px] md:h-[200px]"
                         : "h-[540px] sm:h-[520px] md:h-[470px]"
                     }`}
                   >
                     <img
                       src={neighborhood.image}
-                      alt={neighborhood.name}
+                      alt={
+                        neighborhood.name[i18n.language] || neighborhood.name.es
+                      }
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -77,7 +80,7 @@ const NeighborhoodsGrid = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[440px] sm:h-[400px] md:h-[350px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6"
+                        ? "h-[320px] sm:h-[380px] md:h-[350px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
@@ -89,23 +92,24 @@ const NeighborhoodsGrid = () => {
                           : "text-base sm:text-lg md:text-xl mb-0"
                       }`}
                     >
-                      {neighborhood.name}
+                      {neighborhood.name[i18n.language] || neighborhood.name.es}
                     </h3>
 
                     {isActive && (
                       <>
                         <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
 
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2">
-                          {neighborhood.fullDescription}
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2  line-clamp-6">
+                          {neighborhood.fullDescription[i18n.language] ||
+                            neighborhood.fullDescription.es}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full px-2 sm:px-4 mt-auto mb-4">
                           <button className="flex-1 bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
-                            Explorar
+                            {t("neighborhoods.btnExplore")}
                           </button>
                           <button className="flex-1 border-2 border-primary hover:bg-primary hover:text-white text-primary py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest">
-                            Detalles
+                            {t("neighborhoods.btnDetails")}
                           </button>
                         </div>
                       </>

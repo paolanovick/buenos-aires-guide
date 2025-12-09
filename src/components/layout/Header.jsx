@@ -1,89 +1,136 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("ES");
+  const [activeSection, setActiveSection] = useState("");
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
+
+      const sections = ["bienvenida", "barrios", "lugares", "tango"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navigation = [
-    { name: "Inicio", href: "/" },
-    { name: "Barrios", href: "/barrios" },
-    { name: "Tango", href: "/tango" },
-    { name: "Contacto", href: "/contacto" },
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
+  const navLinks = [
+    { name: t("header.home"), id: "hero", href: "/#hero" },
+    { name: t("header.welcome"), id: "bienvenida", href: "/#bienvenida" },
+    { name: t("header.neighborhoods"), id: "barrios", href: "/#barrios" },
+    { name: t("header.places"), id: "lugares", href: "/#lugares" },
+    { name: t("header.tango"), id: "tango", href: "/#tango" },
   ];
+
+  const isActiveLink = (linkId) => {
+    return (
+      activeSection === linkId || (linkId === "hero" && activeSection === "")
+    );
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-white shadow-lg py-4"
+          : "bg-white/95 backdrop-blur-sm py-6"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span
-              className={`text-2xl font-serif font-bold transition-colors ${
-                isScrolled ? "text-primary" : "text-white"
-              }`}
-            >
-              Buenos Aires
-            </span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <Link
+            to="/"
+            className="text-2xl font-serif font-bold text-primary hover:text-secondary transition-colors"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Buenos Aires Guide
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${
-                  isScrolled ? "text-textDark" : "text-white"
+          <nav className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`text-sm font-medium uppercase tracking-wider transition-colors relative ${
+                  isActiveLink(link.id)
+                    ? "text-secondary"
+                    : "text-primary hover:text-secondary"
                 }`}
               >
-                {item.name}
-              </Link>
+                {link.name}
+                {isActiveLink(link.id) && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"></span>
+                )}
+              </a>
             ))}
+          </nav>
 
-            {/* Language Selector */}
+          <div className="hidden md:flex items-center gap-2">
             <button
-              onClick={() => setCurrentLang(currentLang === "ES" ? "EN" : "ES")}
-              className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-secondary ${
-                isScrolled ? "text-textDark" : "text-white"
+              onClick={() => changeLanguage("es")}
+              className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                i18n.language === "es"
+                  ? "text-secondary"
+                  : "text-gray-400 hover:text-secondary"
               }`}
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-                />
-              </svg>
-              <span>{currentLang}</span>
+              ES
+            </button>
+            <span className="text-gray-300">|</span>
+            <button
+              onClick={() => changeLanguage("en")}
+              className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                i18n.language === "en"
+                  ? "text-secondary"
+                  : "text-gray-400 hover:text-secondary"
+              }`}
+            >
+              EN
             </button>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled ? "text-primary" : "text-white"
-            }`}
+            className="md:hidden p-2 text-primary hover:text-secondary transition-colors"
+            aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
@@ -110,33 +157,54 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="block px-4 py-2 text-textDark hover:bg-bgLight rounded-lg transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <button
-              onClick={() => {
-                setCurrentLang(currentLang === "ES" ? "EN" : "ES");
-                setIsMobileMenuOpen(false);
-              }}
-              className="block w-full text-left px-4 py-2 text-textDark hover:bg-bgLight rounded-lg transition-colors"
-            >
-              🌐 {currentLang === "ES" ? "English" : "Español"}
-            </button>
-          </div>
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className={`text-sm font-medium uppercase tracking-wider transition-colors ${
+                    isActiveLink(link.id)
+                      ? "text-secondary"
+                      : "text-primary hover:text-secondary"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
+
+              <div className="flex items-center gap-2 pt-2">
+                <button
+                  onClick={() => changeLanguage("es")}
+                  className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                    i18n.language === "es"
+                      ? "text-secondary"
+                      : "text-gray-400 hover:text-secondary"
+                  }`}
+                >
+                  ES
+                </button>
+                <span className="text-gray-300">|</span>
+                <button
+                  onClick={() => changeLanguage("en")}
+                  className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                    i18n.language === "en"
+                      ? "text-secondary"
+                      : "text-gray-400 hover:text-secondary"
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
+            </div>
+          </nav>
         )}
-      </nav>
+      </div>
     </header>
   );
 };
 
 export default Header;
+
