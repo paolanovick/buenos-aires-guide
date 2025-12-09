@@ -38,9 +38,9 @@ const TopPlaces = () => {
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           breakpoints={{
-            640: { slidesPerView: 2.2, spaceBetween: 20 },
-            1024: { slidesPerView: 3.5, spaceBetween: 25 },
-            1280: { slidesPerView: 4, spaceBetween: 30 },
+            640: { slidesPerView: 2.5, spaceBetween: 20 },
+            1024: { slidesPerView: 3.8, spaceBetween: 25 },
+            1280: { slidesPerView: 4.5, spaceBetween: 30 },
           }}
         >
           {topPlaces.map((place, index) => {
@@ -51,15 +51,15 @@ const TopPlaces = () => {
                 <div
                   className={`relative h-[620px] sm:h-[600px] md:h-[550px] bg-white rounded-lg overflow-hidden transition-all duration-700 ease-out mb-20 ${
                     isActive
-                      ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.07] z-20"
-                      : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 opacity-70 z-10"
+                      ? "shadow-[0_20px_35px_rgba(0,0,0,0.25)] scale-[1.06] z-20"
+                      : "shadow-[0_14px_25px_rgba(0,0,0,0.15)] scale-95 z-10 opacity-80"
                   }`}
                 >
                   {/* Imagen */}
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[250px] sm:h-[220px] md:h-[200px]"
+                        ? "h-[300px] sm:h-[220px] md:h-[200px]"
                         : "h-[540px] sm:h-[520px] md:h-[470px]"
                     }`}
                   >
@@ -80,7 +80,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[370px] sm:h-[380px] md:h-[350px] justify-start pt-3 sm:pt-6 md:pt-8 px-4 sm:px-6"
+                        ? "h-[320px] sm:h-[380px] md:h-[350px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
@@ -121,7 +121,7 @@ const TopPlaces = () => {
                       <>
                         <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
 
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-5 max-w-sm px-2 line-clamp-5">
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2 line-clamp-5">
                           {place.fullDescription[i18n.language]}
                         </p>
 
