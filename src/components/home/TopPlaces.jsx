@@ -59,7 +59,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute top-0 left-0 right-0 overflow-hidden transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[330px] sm:h-[250px] md:h-[200px]"
+                        ? "h-[280px] sm:h-[250px] md:h-[200px]"
                         : "h-[470px]"
                     }`}
                   >
@@ -80,7 +80,7 @@ const TopPlaces = () => {
                   <div
                     className={`absolute bottom-0 left-0 right-0 bg-white flex flex-col items-center text-center transition-all duration-700 ease-in-out ${
                       isActive
-                        ? "h-[290px] sm:h-[350px] md:h-[340px] justify-start pt-6 sm:pt-8 px-4 sm:px-6 pb-4"
+                        ? "h-[340px] sm:h-[350px] md:h-[340px] justify-start pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6 pb-4"
                         : "h-[80px] justify-center px-6"
                     }`}
                   >
