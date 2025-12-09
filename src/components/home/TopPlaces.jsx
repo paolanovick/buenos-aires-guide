@@ -121,7 +121,7 @@ const TopPlaces = () => {
                       <>
                         <div className="w-12 h-0.5 bg-primary mb-3 sm:mb-4"></div>
 
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2 line-clamp-5">
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-sm px-2 line-clamp-6">
                           {place.fullDescription[i18n.language]}
                         </p>
 
