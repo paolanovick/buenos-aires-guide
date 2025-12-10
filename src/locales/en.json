@@ -58,17 +58,24 @@
     "stat3": "Since"
   },
   "footer": {
-    "about": "About Us",
-    "aboutDesc": "Professional tour guide with over 15 years of experience in Buenos Aires.",
-    "quickLinks": "Quick Links",
-    "contact": "Contact",
-    "phone": "Phone",
-    "email": "Email",
-    "usefulPhones": "Useful Phones",
-    "emergency": "Emergency",
-    "police": "Police",
-    "ambulance": "Ambulance",
-    "tourism": "Tourist Information",
-    "copyright": "© 2024 Buenos Aires Guide. All rights reserved."
+    "title": "Buenos Aires Guide",
+  "description": "Your personalized tourist guide to discover the best corners of Buenos Aires.",
+  "explore": "Explore",
+  "neighborhoods": "Neighborhoods",
+  "highlightedPlaces": "Featured Places",
+  "tangoCulture": "Tango & Culture",
+  "gastronomy": "Gastronomy",
+  "contact": "Contact",
+  "location": "Buenos Aires, Argentina",
+  "usefulPhones": "Useful Phones",
+  "emergency": "Emergency",
+  "police": "Police",
+  "fireDept": "Fire Department",
+  "ambulance": "Ambulance",
+  "tourism": "Tourism",
+  "copyright": "Buenos Aires Guide. All rights reserved.",
+  "privacy": "Privacy",
+  "terms": "Terms",
+  "cookies": "Cookies"
   }
 }

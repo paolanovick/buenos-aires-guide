@@ -1,22 +1,21 @@
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-primary text-white">
-      {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Columna 1: Info */}
           <div className="space-y-4">
             <h3 className="text-2xl font-serif text-secondary mb-6">
-              Buenos Aires Guide
+              {t("footer.title")}
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Tu guía turística personalizada para descubrir los mejores
-              rincones de Buenos Aires.
+              {t("footer.description")}
             </p>
             <div className="flex gap-4 pt-4">
-              {/* Social icons */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-colors flex items-center justify-center"
@@ -56,16 +55,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Columna 2: Enlaces */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Explorar</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              {t("footer.explore")}
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#"
                   className="text-white/70 hover:text-secondary transition-colors"
                 >
-                  Barrios
+                  {t("footer.neighborhoods")}
                 </a>
               </li>
               <li>
@@ -73,7 +73,7 @@ const Footer = () => {
                   href="#"
                   className="text-white/70 hover:text-secondary transition-colors"
                 >
-                  Lugares destacados
+                  {t("footer.highlightedPlaces")}
                 </a>
               </li>
               <li>
@@ -81,7 +81,7 @@ const Footer = () => {
                   href="#"
                   className="text-white/70 hover:text-secondary transition-colors"
                 >
-                  Tango & Cultura
+                  {t("footer.tangoCulture")}
                 </a>
               </li>
               <li>
@@ -89,15 +89,16 @@ const Footer = () => {
                   href="#"
                   className="text-white/70 hover:text-secondary transition-colors"
                 >
-                  Gastronomía
+                  {t("footer.gastronomy")}
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Columna 3: Contacto */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contacto</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              {t("footer.contact")}
+            </h4>
             <ul className="space-y-3 text-white/70">
               <li className="flex items-start gap-2">
                 <svg
@@ -140,33 +141,34 @@ const Footer = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>Buenos Aires, Argentina</span>
+                <span>{t("footer.location")}</span>
               </li>
             </ul>
           </div>
 
-          {/* Columna 4: Teléfonos útiles */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Teléfonos Útiles</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              {t("footer.usefulPhones")}
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li className="flex justify-between">
-                <span>Emergencias:</span>
+                <span>{t("footer.emergency")}:</span>
                 <span className="text-white">911</span>
               </li>
               <li className="flex justify-between">
-                <span>Policía:</span>
+                <span>{t("footer.police")}:</span>
                 <span className="text-white">101</span>
               </li>
               <li className="flex justify-between">
-                <span>Bomberos:</span>
+                <span>{t("footer.fireDept")}:</span>
                 <span className="text-white">100</span>
               </li>
               <li className="flex justify-between">
-                <span>Ambulancia:</span>
+                <span>{t("footer.ambulance")}:</span>
                 <span className="text-white">107</span>
               </li>
               <li className="flex justify-between">
-                <span>Turismo:</span>
+                <span>{t("footer.tourism")}:</span>
                 <span className="text-white">0800-999-2838</span>
               </li>
             </ul>
@@ -174,22 +176,21 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
             <p>
-              © {currentYear} Buenos Aires Guide. Todos los derechos reservados.
+              © {currentYear} {t("footer.copyright")}
             </p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-secondary transition-colors">
-                Privacidad
+                {t("footer.privacy")}
               </a>
               <a href="#" className="hover:text-secondary transition-colors">
-                Términos
+                {t("footer.terms")}
               </a>
               <a href="#" className="hover:text-secondary transition-colors">
-                Cookies
+                {t("footer.cookies")}
               </a>
             </div>
           </div>

@@ -61,17 +61,24 @@
     "stat3": "Desde"
   },
   "footer": {
-    "about": "Sobre Nosotros",
-    "aboutDesc": "Guía turístico profesional con más de 15 años de experiencia en Buenos Aires.",
-    "quickLinks": "Enlaces Rápidos",
-    "contact": "Contacto",
-    "phone": "Teléfono",
-    "email": "Email",
-    "usefulPhones": "Teléfonos Útiles",
-    "emergency": "Emergencias",
-    "police": "Policía",
-    "ambulance": "Ambulancia",
-    "tourism": "Información Turística",
-    "copyright": "© 2024 Buenos Aires Guide. Todos los derechos reservados."
+    "title": "Buenos Aires Guide",
+  "description": "Tu guía turística personalizada para descubrir los mejores rincones de Buenos Aires.",
+  "explore": "Explorar",
+  "neighborhoods": "Barrios",
+  "highlightedPlaces": "Lugares destacados",
+  "tangoCulture": "Tango & Cultura",
+  "gastronomy": "Gastronomía",
+  "contact": "Contacto",
+  "location": "Buenos Aires, Argentina",
+  "usefulPhones": "Teléfonos Útiles",
+  "emergency": "Emergencias",
+  "police": "Policía",
+  "fireDept": "Bomberos",
+  "ambulance": "Ambulancia",
+  "tourism": "Turismo",
+  "copyright": "Buenos Aires Guide. Todos los derechos reservados.",
+  "privacy": "Privacidad",
+  "terms": "Términos",
+  "cookies": "Cookies"
   }
 }

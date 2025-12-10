@@ -14,7 +14,7 @@ const Hero = () => {
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&q=80",
+        "https://media.viajando.travel/p/7cd389472e64fd8c50c970458b35dc04/adjuntos/236/imagenes/000/737/0000737957/buenos-aires-obelisco.jpg",
       title: t("hero.slide1_title"),
       subtitle: t("hero.slide1_subtitle"),
       description: t("hero.slide1_description"),
@@ -22,7 +22,7 @@ const Hero = () => {
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=1920&q=80",
+        "https://tribusviajeras.com/wp-content/uploads/2024/02/Descubre-la-Cultura-Argentina-Tango-Vino-y-Asado-1024x683.webp",
       title: t("hero.slide2_title"),
       subtitle: t("hero.slide2_subtitle"),
       description: t("hero.slide2_description"),
@@ -30,7 +30,7 @@ const Hero = () => {
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1920&q=80",
+        "https://media.laopinionline.ar/p/2aa9a482e435ac26a599512c04ad756c/adjuntos/370/imagenes/100/066/0100066212/790x0/smart/noche-cupulasjpeg.jpeg",
       title: t("hero.slide3_title"),
       subtitle: t("hero.slide3_subtitle"),
       description: t("hero.slide3_description"),
