@@ -78,9 +78,7 @@ const TopPlaces = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
-                      <div className="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-xs">
-                        {place.type[i18n.language]}
-                      </div>
+                     
                     </div>
 
                     <div
