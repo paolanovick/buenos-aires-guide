@@ -50,15 +50,10 @@
     "btnDetails": "Detalles"
   },
   "tango": {
-    "subtitle": "El Alma de Buenos Aires",
+    "subtitle": "Arte y Cultura",
     "title": "Tango Porteño",
-    "intro": "El tango es mucho más que una danza: es el alma de Buenos Aires. Nacido en los arrabales, creció entre guitarras, bandoneones y abrazos intensos.",
-    "paragraph": "Hoy, el tango porteño vibra en cada milonga, cada esquina y cada mirada que se cruza en la pista. Es nostalgia y celebración, tradición y reinvención.",
-    "btnShows": "Ver Shows de Tango",
-    "btnLearn": "Aprender a Bailar",
-    "stat1": "Milongas",
-    "stat2": "Shows",
-    "stat3": "Desde"
+    "intro": "Sumérgete en la experiencia auténtica del tango porteño. Descubrí milongas tradicionales, clases para todos los niveles y espacios donde el tango se vive intensamente.",
+    "btnDetails": "Ver más información"
   },
   "footer": {
     "title": "Buenos Aires Guide",

@@ -50,15 +50,10 @@
     "btnDetails": "Details"
   },
   "tango": {
-    "subtitle": "The Soul of Buenos Aires",
-    "title": "Porteño Tango",
-    "intro": "Tango is much more than a dance: it's the soul of Buenos Aires. Born in the suburbs, it grew among guitars, bandoneons and intense embraces.",
-    "paragraph": "Today, porteño tango vibrates in every milonga, every corner and every glance that crosses on the dance floor. It's nostalgia and celebration, tradition and reinvention.",
-    "btnShows": "See Tango Shows",
-    "btnLearn": "Learn to Dance",
-    "stat1": "Milongas",
-    "stat2": "Shows",
-    "stat3": "Since"
+    "subtitle": "Art and Culture",
+    "title": "Buenos Aires Tango",
+    "intro": "Immerse yourself in the authentic Buenos Aires tango experience. Discover traditional milongas, classes for all levels and spaces where tango is lived intensely.",
+    "btnDetails": "View more info"
   },
   "footer": {
     "title": "Buenos Aires Guide",
