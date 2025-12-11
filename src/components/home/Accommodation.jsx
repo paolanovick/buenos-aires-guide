@@ -1,115 +1,162 @@
-import { useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import AccommodationModal from "../common/AccommodationModal";
 
-const AccommodationModal = ({ accommodation, isOpen, onClose }) => {
-  const { i18n } = useTranslation();
+const accommodations = [
+  {
+    id: 1,
+    name: { es: "Departamento Estilo Francés", en: "French Style Apartment" },
+    style: {
+      es: "Elegancia clásica parisina con molduras, techos altos y decoración refinada que te transporta a la Europa del siglo XIX.",
+      en: "Classic Parisian elegance with moldings, high ceilings and refined decoration that transports you to 19th century Europe.",
+    },
+    mainImage: "https://i.imgur.com/SJIV0ZK.jpg",
+    gallery: ["https://i.imgur.com/SJIV0ZK.jpg"],
+    features: {
+      es: [
+        "2 habitaciones amplias",
+        "Capacidad para 4 personas",
+        "Cocina totalmente equipada",
+        "WiFi de alta velocidad",
+        "Aire acondicionado",
+        "Ubicación céntrica",
+      ],
+      en: [
+        "2 spacious bedrooms",
+        "Capacity for 4 people",
+        "Fully equipped kitchen",
+        "High-speed WiFi",
+        "Air conditioning",
+        "Central location",
+      ],
+    },
+    fullDescription: {
+      es: "Este hermoso departamento de estilo francés combina la elegancia clásica con las comodidades modernas. Sus techos altos, molduras originales y ventanales amplios crean un ambiente luminoso y sofisticado.",
+      en: "This beautiful French-style apartment combines classic elegance with modern comforts. Its high ceilings, original moldings and large windows create a bright and sophisticated atmosphere.",
+    },
+  },
+  {
+    id: 2,
+    name: { es: "Departamento Estilo Europeo", en: "European Style Apartment" },
+    style: {
+      es: "Diseño contemporáneo minimalista con líneas limpias, espacios funcionales y estética moderna que refleja el confort europeo actual.",
+      en: "Contemporary minimalist design with clean lines, functional spaces and modern aesthetics that reflects current European comfort.",
+    },
+    mainImage: "https://i.imgur.com/KAjG3UG.jpeg",
+    gallery: ["https://i.imgur.com/KAjG3UG.jpeg"],
+    features: {
+      es: [
+        "1 habitación con escritorio",
+        "Capacidad para 2 personas",
+        "Cocina moderna equipada",
+        "WiFi de alta velocidad",
+        "Calefacción y aire",
+        "Zona tranquila",
+      ],
+      en: [
+        "1 bedroom with desk",
+        "Capacity for 2 people",
+        "Modern equipped kitchen",
+        "High-speed WiFi",
+        "Heating and AC",
+        "Quiet area",
+      ],
+    },
+    fullDescription: {
+      es: "Departamento de estilo europeo contemporáneo, perfecto para parejas o viajeros que buscan un espacio moderno y funcional. Su diseño minimalista crea un ambiente acogedor.",
+      en: "Contemporary European-style apartment, perfect for couples or travelers looking for a modern and functional space. Its minimalist design creates a cozy environment.",
+    },
+  },
+];
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+const Accommodation = () => {
+  const { t, i18n } = useTranslation();
+  const [selectedAccommodation, setSelectedAccommodation] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  if (!isOpen || !accommodation) return null;
+  const handleOpenModal = (accommodation) => {
+    setSelectedAccommodation(accommodation);
+    setIsModalOpen(true);
+  };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      <div
-        className="fixed inset-0 bg-black/70 backdrop-blur-sm"
-        onClick={onClose}
-      ></div>
-      <div className="relative min-h-screen flex items-center justify-center p-4">
-        <div className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all"
-          >
-            <span className="text-2xl text-gray-700">×</span>
-          </button>
+    <>
+      <section className="py-24 bg-bgLight">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-secondary text-sm font-medium tracking-widest uppercase">
+              {t("accommodation.subtitle")}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">
+              {t("accommodation.title")}
+            </h2>
+            <div className="w-20 h-1 bg-secondary mx-auto"></div>
+            <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
+              {t("accommodation.intro")}
+            </p>
+          </div>
 
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            loop={true}
-            className="h-[300px] md:h-[400px]"
-          >
-            {accommodation.gallery?.map((img, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={img}
-                  alt={`${accommodation.name[i18n.language]} ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <div className="p-6 md:p-8">
-            <div className="mb-6">
-              <h2 className="text-3xl md:text-4xl font-serif text-primary mb-2">
-                {accommodation.name[i18n.language]}
-              </h2>
-              <p className="text-secondary font-medium">
-                {accommodation.subtitle[i18n.language]}
-              </p>
-            </div>
-
-            <div className="mb-8">
-              <p className="text-gray-700 leading-relaxed text-lg">
-                {accommodation.fullDescription[i18n.language]}
-              </p>
-            </div>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                {i18n.language === "es" ? "Características" : "Features"}
-              </h3>
-              <div className="grid md:grid-cols-2 gap-3">
-                {accommodation.features[i18n.language].map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-2 text-gray-700"
-                  >
-                    <span className="text-secondary text-xl mt-0.5">✓</span>
-                    <span>{feature}</span>
+          <div className="grid md:grid-cols-2 gap-8">
+            {accommodations.map((accommodation) => (
+              <div
+                key={accommodation.id}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                <div
+                  className="relative h-96 overflow-hidden cursor-pointer"
+                  onClick={() => handleOpenModal(accommodation)}
+                >
+                  <img
+                    src={accommodation.mainImage}
+                    alt={accommodation.name[i18n.language]}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center p-8 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-3xl font-serif mb-4 drop-shadow-lg">
+                        {accommodation.name[i18n.language]}
+                      </h3>
+                      <p className="text-lg leading-relaxed drop-shadow-md">
+                        {accommodation.style[i18n.language]}
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                 
+                </div>
 
-            <div className="flex gap-4">
-              <a
-                href="mailto:mikemurdoch58@gmail.com"
-                className="flex-1 bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all text-center"
-              >
-                {i18n.language === "es"
-                  ? "Consultar disponibilidad"
-                  : "Check availability"}
-              </a>
-              <button
-                onClick={onClose}
-                className="flex-1 border-2 border-gray-300 hover:border-primary hover:text-primary text-gray-700 py-3 px-6 rounded-lg font-medium transition-all"
-              >
-                {i18n.language === "es" ? "Cerrar" : "Close"}
-              </button>
-            </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-serif text-primary mb-4 text-center">
+                    {accommodation.name[i18n.language]}
+                  </h3>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => handleOpenModal(accommodation)}
+                      className="flex-1 bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all"
+                    >
+                      {t("accommodation.btnGallery")}
+                    </button>
+                    <a
+                      href="mailto:mikemurdoch58@gmail.com"
+                      className="flex-1 border-2 border-secondary hover:bg-secondary hover:text-white text-secondary py-3 px-6 rounded-lg font-medium transition-all text-center"
+                    >
+                      {t("accommodation.btnContact")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <AccommodationModal
+        accommodation={selectedAccommodation}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 };
 
-export default AccommodationModal;
+export default Accommodation;
