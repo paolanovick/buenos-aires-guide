@@ -131,10 +131,11 @@ const TangoSection = () => {
                             {place.shortDescription[i18n.language]}
                           </p>
 
+                          {/* BOTÓN — IGUAL QUE TOP PLACES */}
                           <div className="w-full px-4 mb-2">
                             <button
                               onClick={() => handleOpenModal(place)}
-                              className="w-full bg-secondary hover:bg-secondary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest"
+                              className="w-full bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest"
                             >
                               {t("tango.btnDetails")}
                             </button>

@@ -53,7 +53,7 @@
     "subtitle": "Art and Culture",
     "title": "Buenos Aires Tango",
     "intro": "Immerse yourself in the authentic Buenos Aires tango experience. Discover traditional milongas, classes for all levels and spaces where tango is lived intensely.",
-    "btnDetails": "View more info"
+    "btnDetails": "Details"
   },
   "footer": {
     "title": "Buenos Aires Guide",
@@ -80,5 +80,17 @@
     "subtitle": "Accommodation",
     "title": "We're welcoming you here...",
     "btnDetails": "More details"
+  },
+  
+"transport": {
+  "subtitle": "Transportation Guide",
+  "title": "Public Transport",
+  "description": "The subway is the fastest and most convenient way to move around Buenos Aires. Tap the map to view routes, connections, and tips.",
+    "recorrido": "Route",
+    "estacionesDestacadas": "Key stations",
+    "conexiones": "Connections",
+    "horarios": "Schedule",
+    "tips": "Tips"
   }
+ 
 }

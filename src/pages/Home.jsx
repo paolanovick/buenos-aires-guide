@@ -3,6 +3,8 @@ import Accommodation from "../components/home/Accommodation";
 import NeighborhoodsGrid from "../components/home/NeighborhoodsGrid";
 import TopPlaces from "../components/home/TopPlaces";
 import TangoSection from "../components/home/TangoSection";
+import TransportSection from "../components/home/TransportSection";
+
 
 const Home = () => {
   return (
@@ -19,6 +21,9 @@ const Home = () => {
       </section>
       <section id="tango">
         <TangoSection />
+      </section>
+      <section id="tango">
+        <TransportSection />
       </section>
     </div>
   );

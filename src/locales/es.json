@@ -53,7 +53,7 @@
     "subtitle": "Arte y Cultura",
     "title": "Tango Porteño",
     "intro": "Sumérgete en la experiencia auténtica del tango porteño. Descubrí milongas tradicionales, clases para todos los niveles y espacios donde el tango se vive intensamente.",
-    "btnDetails": "Ver más información"
+    "btnDetails": "Detalles"
   },
   "footer": {
     "title": "Buenos Aires Guide",
@@ -79,6 +79,17 @@
   "accommodation": {
     "subtitle": "Alojamiento",
     "title": "Te estamos recibiendo acá...",
-    "btnDetails": "Más detalles"
-  }
+    "btnDetails": "Detalles"
+  },
+  "transport": {
+    "subtitle": "Guía de Transporte",
+  "title": "Transporte Público",
+  "description": "El subte es la forma más rápida y conveniente de moverse por Buenos Aires. Tocá el mapa para ver recorridos, conexiones y tips.",
+    "recorrido": "Recorrido",
+    "estacionesDestacadas": "Estaciones destacadas",
+    "conexiones": "Conexiones",
+    "horarios": "Horarios",
+    "tips": "Consejos"
+  },
+  "lang": "es"
 }
