@@ -89,7 +89,9 @@ const AccommodationModal = ({ accommodation, isOpen, onClose }) => {
 
             <div className="flex gap-4">
               <a
-                href="mailto:mikemurdoch58@gmail.com"
+                href="https://wa.me/541155690989?text=Hola%2C%20me%20interesa%20consultar%20disponibilidad%20del%20departamento"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all text-center"
               >
                 {i18n.language === "es"
