@@ -70,14 +70,7 @@ const Hero = () => {
                   <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in-delay-2">
                     {slide.description}
                   </p>
-                  <div className="flex flex-wrap gap-4 justify-center animate-fade-in-delay-3">
-                    <button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
-                      {t("hero.btn1")}
-                    </button>
-                    <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-all border border-white/30">
-                      {t("hero.btn2")}
-                    </button>
-                  </div>
+                 
                 </div>
               </div>
             </div>
