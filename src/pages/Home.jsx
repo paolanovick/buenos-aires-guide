@@ -1,5 +1,5 @@
 import Hero from "../components/home/Hero";
-import Welcome from "../components/home/Welcome";
+import Accommodation from "../components/home/Accommodation";
 import NeighborhoodsGrid from "../components/home/NeighborhoodsGrid";
 import TopPlaces from "../components/home/TopPlaces";
 import TangoSection from "../components/home/TangoSection";
@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Hero />
       <section id="bienvenida">
-        <Welcome />
+        <Accommodation />
       </section>
       <section id="barrios">
         <NeighborhoodsGrid />
