@@ -6,65 +6,83 @@ const accommodations = [
   {
     id: 1,
     name: { es: "Departamento Estilo Francés", en: "French Style Apartment" },
+    subtitle: { es: "Piso 3 Letra L", en: "Floor 3 Letter L" },
     style: {
       es: "Elegancia clásica parisina con molduras, techos altos y decoración refinada que te transporta a la Europa del siglo XIX.",
       en: "Classic Parisian elegance with moldings, high ceilings and refined decoration that transports you to 19th century Europe.",
     },
     mainImage: "https://i.imgur.com/SJIV0ZK.jpg",
-    gallery: ["https://i.imgur.com/SJIV0ZK.jpg"],
+    gallery: [
+      "https://i.imgur.com/SJIV0ZK.jpg",
+      "https://i.imgur.com/SJIV0ZK.jpg",
+      "https://i.imgur.com/SJIV0ZK.jpg",
+    ],
     features: {
       es: [
-        "2 habitaciones amplias",
-        "Capacidad para 4 personas",
-        "Cocina totalmente equipada",
-        "WiFi de alta velocidad",
-        "Aire acondicionado",
-        "Ubicación céntrica",
+        "95m² de superficie",
+        "2 dormitorios con balcón",
+        "1 baño completo + toilette",
+        "WiFi, TV plana, caja seguridad",
+        "Cocina equipada con desayunador",
+        "Splits frío/calor",
+        "Pisos de parquet de roble",
+        "Edificio histórico 1905",
       ],
       en: [
-        "2 spacious bedrooms",
-        "Capacity for 4 people",
-        "Fully equipped kitchen",
-        "High-speed WiFi",
-        "Air conditioning",
-        "Central location",
+        "95m² surface",
+        "2 bedrooms with balcony",
+        "1 full bathroom + toilet",
+        "WiFi, flat TV, safe",
+        "Equipped kitchen with breakfast bar",
+        "AC/Heating",
+        "Oak parquet floors",
+        "Historic building 1905",
       ],
     },
     fullDescription: {
-      es: "Este hermoso departamento de estilo francés combina la elegancia clásica con las comodidades modernas. Sus techos altos, molduras originales y ventanales amplios crean un ambiente luminoso y sofisticado.",
-      en: "This beautiful French-style apartment combines classic elegance with modern comforts. Its high ceilings, original moldings and large windows create a bright and sophisticated atmosphere.",
+      es: "Impecable apartamento de categoría de 95m2 de superficie. Se encuentra en un clásico edificio de época estilo Francés, construido en el año 1905 muy bien mantenido y perfecto hasta 4 pasajeros muy exigentes que buscan una propiedad única y diferente. Decorado con muy buen gusto con un estilo moderno, contemporáneo, pisos de parquet de roble de eslavonia, aberturas medio punto de cedro macizo, splits frío, calor en todos los ambientes. Compuesto por 2 dormitorios, con balcón a la calle, con wifi, tv plana, caja de seguridad y frigobar; hall de entrada con estar; living; comedor; 1 baño completo; 1 toilette; cocina con barra para desayuno (microondas; lavaplatos; cafetera de cápsulas; tostadora; jarra eléctrica; heladera; cocina; vajilla y batería de cocina) lavadero. Se encuentra a una cuadra de Avenida Mayo y a una cuadra y media de Avenida 9 de Julio. A diez cuadras tanto del emblemático barrio de San Telmo como del barrio mas nuevo y exclusivo de la ciudad, Puerto Madero. A cuatro cuadras de la calle peatonal Florida y muy cerca de los mejores Teatros y Restaurantes de Buenos Aires. Conviven allí todas las líneas de subtes y colectivos.",
+      en: "Impeccable 95m2 category apartment located in a classic French-style building from 1905, very well maintained and perfect for up to 4 demanding guests seeking a unique and different property.",
     },
   },
   {
     id: 2,
     name: { es: "Departamento Estilo Europeo", en: "European Style Apartment" },
+    subtitle: { es: "Piso 2 Letra I", en: "Floor 2 Letter I" },
     style: {
       es: "Diseño contemporáneo minimalista con líneas limpias, espacios funcionales y estética moderna que refleja el confort europeo actual.",
       en: "Contemporary minimalist design with clean lines, functional spaces and modern aesthetics that reflects current European comfort.",
     },
     mainImage: "https://i.imgur.com/KAjG3UG.jpeg",
-    gallery: ["https://i.imgur.com/KAjG3UG.jpeg"],
+    gallery: [
+      "https://i.imgur.com/KAjG3UG.jpeg",
+      "https://i.imgur.com/KAjG3UG.jpeg",
+      "https://i.imgur.com/KAjG3UG.jpeg",
+    ],
     features: {
       es: [
-        "1 habitación con escritorio",
-        "Capacidad para 2 personas",
-        "Cocina moderna equipada",
-        "WiFi de alta velocidad",
-        "Calefacción y aire",
-        "Zona tranquila",
+        "110m² de superficie",
+        "2 dormitorios con balcón",
+        "2 baños completos",
+        "WiFi, TV plana, caja seguridad",
+        "Cocina equipada con desayunador",
+        "Splits frío/calor",
+        "Pisos de parquet de roble",
+        "Edificio histórico 1905",
       ],
       en: [
-        "1 bedroom with desk",
-        "Capacity for 2 people",
-        "Modern equipped kitchen",
-        "High-speed WiFi",
-        "Heating and AC",
-        "Quiet area",
+        "110m² surface",
+        "2 bedrooms with balcony",
+        "2 full bathrooms",
+        "WiFi, flat TV, safe",
+        "Equipped kitchen with breakfast bar",
+        "AC/Heating",
+        "Oak parquet floors",
+        "Historic building 1905",
       ],
     },
     fullDescription: {
-      es: "Departamento de estilo europeo contemporáneo, perfecto para parejas o viajeros que buscan un espacio moderno y funcional. Su diseño minimalista crea un ambiente acogedor.",
-      en: "Contemporary European-style apartment, perfect for couples or travelers looking for a modern and functional space. Its minimalist design creates a cozy environment.",
+      es: "Impecable apartamento de categoría de 110m2 de superficie. Se encuentra en un clásico edificio de época estilo Francés, construido en el año 1905 muy bien mantenido y perfecto hasta 4 pasajeros muy exigentes que buscan una propiedad única y diferente.",
+      en: "Impeccable 110m2 category apartment located in a classic French-style building from 1905, very well maintained and perfect for up to 4 demanding guests seeking a unique and different property.",
     },
   },
 ];
@@ -83,7 +101,7 @@ const Accommodation = () => {
     <>
       <section className="py-24 bg-bgLight">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-6">
             <span className="text-secondary text-sm font-medium tracking-widest uppercase">
               {t("accommodation.subtitle")}
             </span>
@@ -91,8 +109,18 @@ const Accommodation = () => {
               {t("accommodation.title")}
             </h2>
             <div className="w-20 h-1 bg-secondary mx-auto"></div>
-            <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
-              {t("accommodation.intro")}
+          </div>
+
+          <div className="max-w-3xl mx-auto mb-12 text-gray-700 leading-relaxed">
+            <p className="mb-4">
+              {i18n.language === "es"
+                ? "Ubicado en el barrio de Monserrat, casco histórico de la ciudad autónoma de Buenos Aires. Allí se encuentran los lugares turísticos más importantes de la ciudad. A 3 cuadras la Plaza de Mayo, la Casa Rosada, la Catedral Metropolitana y el Cabildo."
+                : "Located in the Monserrat neighborhood, historic center of Buenos Aires. Here you will find the city's most important tourist sites. 3 blocks to Plaza de Mayo, Casa Rosada, Metropolitan Cathedral and Cabildo."}
+            </p>
+            <p>
+              {i18n.language === "es"
+                ? "En el Casco Histórico se puede visitar la Manzana de las Luces y los túneles ocultos. San Telmo está a diez cuadras, y Puerto Madero, el barrio más nuevo y exclusivo de la ciudad."
+                : "In the Historic Quarter you can visit the Manzana de las Luces and hidden tunnels. San Telmo is ten blocks away, and Puerto Madero, the newest and most exclusive neighborhood."}
             </p>
           </div>
 
@@ -122,27 +150,21 @@ const Accommodation = () => {
                       </p>
                     </div>
                   </div>
-                 
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-2xl font-serif text-primary mb-4 text-center">
+                  <h3 className="text-2xl font-serif text-primary mb-2 text-center">
                     {accommodation.name[i18n.language]}
                   </h3>
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => handleOpenModal(accommodation)}
-                      className="flex-1 bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all"
-                    >
-                      {t("accommodation.btnGallery")}
-                    </button>
-                    <a
-                      href="mailto:mikemurdoch58@gmail.com"
-                      className="flex-1 border-2 border-secondary hover:bg-secondary hover:text-white text-secondary py-3 px-6 rounded-lg font-medium transition-all text-center"
-                    >
-                      {t("accommodation.btnContact")}
-                    </a>
-                  </div>
+                  <p className="text-sm text-gray-500 text-center mb-4">
+                    {accommodation.subtitle[i18n.language]}
+                  </p>
+                  <button
+                    onClick={() => handleOpenModal(accommodation)}
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all"
+                  >
+                    {t("accommodation.btnDetails")}
+                  </button>
                 </div>
               </div>
             ))}
