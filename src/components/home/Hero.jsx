@@ -17,7 +17,7 @@ const Hero = () => {
         "https://media.viajando.travel/p/7cd389472e64fd8c50c970458b35dc04/adjuntos/236/imagenes/000/737/0000737957/buenos-aires-obelisco.jpg",
       title: t("hero.slide1_title"),
       subtitle: t("hero.slide1_subtitle"),
-      description: t("hero.slide1_description"),
+      
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Hero = () => {
         "https://tribusviajeras.com/wp-content/uploads/2024/02/Descubre-la-Cultura-Argentina-Tango-Vino-y-Asado-1024x683.webp",
       title: t("hero.slide2_title"),
       subtitle: t("hero.slide2_subtitle"),
-      description: t("hero.slide2_description"),
+     
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Hero = () => {
         "https://media.laopinionline.ar/p/2aa9a482e435ac26a599512c04ad756c/adjuntos/370/imagenes/100/066/0100066212/790x0/smart/noche-cupulasjpeg.jpeg",
       title: t("hero.slide3_title"),
       subtitle: t("hero.slide3_subtitle"),
-      description: t("hero.slide3_description"),
+      
     },
   ];
 
@@ -78,24 +78,7 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-        <div className="flex flex-col items-center gap-2 text-white">
-          <span className="text-sm font-medium">{t("hero.scroll")}</span>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
-      </div>
+     
     </div>
   );
 };

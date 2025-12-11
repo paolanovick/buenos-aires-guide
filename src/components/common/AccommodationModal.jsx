@@ -44,9 +44,9 @@ const AccommodationModal = ({ accommodation, isOpen, onClose }) => {
               modules={[Navigation, Pagination, Autoplay]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
               loop={true}
-              className="h-[400px] md:h-[500px]"
+              className="h-[500px] md:h-[600px]"
             >
               {accommodation.gallery?.map((img, index) => (
                 <SwiperSlide key={index}>
