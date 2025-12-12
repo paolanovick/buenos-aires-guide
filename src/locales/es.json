@@ -71,7 +71,7 @@
     "fireDept": "Bomberos",
     "ambulance": "Ambulancia",
     "tourism": "Turismo",
-    "copyright": "Buenos Aires Guide. Todos los derechos reservados.",
+    "copyright": "www.concodigoart.com.ar. Todos los derechos reservados.",
     "privacy": "Privacidad",
     "terms": "Términos",
     "cookies": "Cookies"
@@ -92,12 +92,8 @@
     "tips": "Consejos"
   },
   "culture": {
-    "subtitle": "Expresiones Porteñas",
+      "subtitle": "Expresiones Porteñas",
     "title": "Arte y Cultura",
-    "intro1": "Buenos Aires respira tango y poesía. Cada esquina cuenta una historia, cada café guarda secretos de tertulias literarias, cada mural transforma una pared en lienzo.",
-    "intro2": "La ciudad es un escenario vivo donde tradición y modernidad conviven: desde el Teatro Colón hasta las milongas de barrio, desde los cafés históricos hasta el arte urbano que colorea las calles.",
-    "quote": "Buenos Aires es una ciudad donde el arte no está en los museos, está en la calle, en los cafés, en cada esquina.",
-    "quoteAuthor": "Espíritu Porteño",
-    "outro": "Recorrer Buenos Aires es sumergirse en una experiencia cultural única, donde cada barrio tiene su propia identidad artística y cada rincón invita a descubrir la pasión porteña por el arte, la música y la expresión."
+    "btnDetails": "Ver Detalles"
   }
 }

@@ -116,7 +116,7 @@ const NeighborhoodsGrid = () => {
                           <div className="w-full px-4 mb-2">
                             <button
                               onClick={() => handleOpenModal(neighborhood)}
-                              className="w-full bg-primary hover:bg-primary/90 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded font-medium transition-all text-xs uppercase tracking-widest"
+                              className="w-full bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all"
                             >
                               {t("neighborhoods.btnDetails")}
                             </button>
