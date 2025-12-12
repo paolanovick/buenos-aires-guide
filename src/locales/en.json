@@ -91,6 +91,15 @@
     "conexiones": "Connections",
     "horarios": "Schedule",
     "tips": "Tips"
+  },
+  "culture": {
+    "subtitle": "Buenos Aires Expressions",
+    "title": "Art and Culture",
+    "intro1": "Buenos Aires breathes tango and poetry. Every corner tells a story, every café holds secrets of literary gatherings, every mural transforms a wall into canvas.",
+    "intro2": "The city is a living stage where tradition and modernity coexist: from Teatro Colón to neighborhood milongas, from historic cafés to street art that colors the streets.",
+    "quote": "Buenos Aires is a city where art is not in museums, it's in the streets, in the cafés, on every corner.",
+    "quoteAuthor": "Buenos Aires Spirit",
+    "outro": "Exploring Buenos Aires is immersing yourself in a unique cultural experience, where each neighborhood has its own artistic identity and every corner invites you to discover the porteño passion for art, music and expression."
   }
  
 }

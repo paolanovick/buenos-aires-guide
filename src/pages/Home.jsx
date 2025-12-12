@@ -4,6 +4,7 @@ import NeighborhoodsGrid from "../components/home/NeighborhoodsGrid";
 import TopPlaces from "../components/home/TopPlaces";
 import TangoSection from "../components/home/TangoSection";
 import TransportSection from "../components/home/TransportSection";
+import ArteCultura from "../components/home/ArteCultura";
 
 
 const Home = () => {
@@ -21,8 +22,11 @@ const Home = () => {
       </section>
       <section id="tango">
         <TangoSection />
+        <section id="cultura">
+          <ArteCultura />
+        </section>
       </section>
-      <section id="tango">
+      <section id="transporte">
         <TransportSection />
       </section>
     </div>
