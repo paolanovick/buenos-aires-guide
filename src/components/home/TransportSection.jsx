@@ -9,22 +9,19 @@ export default function TransportSection() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="py-20 bg-gradient-to-b to-bgLight overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center">
-  <span className="text-secondary text-sm font-medium tracking-widest uppercase">
-    
-  </span>
+        <span className="text-secondary text-sm font-medium tracking-widest uppercase"></span>
 
-  <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">
-    {t("transport.title")}
-  </h2>
+        <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">
+          {t("transport.title")}
+        </h2>
 
-  <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+        <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
 
-  <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed text-lg">
-    {t("transport.description")}
-  </p>
-
+        <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed text-lg">
+          {t("transport.description")}
+        </p>
 
         {/* MAPA CLICKEABLE */}
         <div

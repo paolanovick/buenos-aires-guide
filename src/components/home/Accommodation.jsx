@@ -131,7 +131,7 @@ const Accommodation = () => {
 
   return (
     <>
-      <section className="py-24 bg-bgLight">
+      <section className="py-24 bg-gradient-to-b  to-bgLight overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-6">
             <span className="text-secondary text-sm font-medium tracking-widest uppercase">

@@ -23,7 +23,7 @@ const TangoSection = () => {
 
   return (
     <>
-      <section className="py-24 bg-gradient-to-b from-white to-bgLight overflow-hidden">
+      <section className="py-18 bg-gradient-to-b  to-bgLight overflow-hidden">
         {/* HEADER */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center">
           <span className="text-secondary text-sm font-medium tracking-widest uppercase">
@@ -136,7 +136,7 @@ const TangoSection = () => {
                             <button
                               onClick={() => handleOpenModal(place)}
                               className="w-full bg-secondary hover:bg-secondary/90 text-white py-3 px-6 rounded-lg font-medium transition-all"
-                            >
+                  >
                               {t("tango.btnDetails")}
                             </button>
                           </div>

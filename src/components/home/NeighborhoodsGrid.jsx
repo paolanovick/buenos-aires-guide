@@ -23,7 +23,7 @@ const NeighborhoodsGrid = () => {
 
   return (
     <>
-      <section className="py-24 bg-bgLight overflow-hidden">
+      <section className="py-18 bg-gradient-to-b  to-bgLight overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
           <div className="text-center">
             <span className="text-secondary text-sm font-medium tracking-widest uppercase">
