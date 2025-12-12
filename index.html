@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- ===========================
-      PRIMARY SEO DATA
-  ============================ -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Buenos Aires Guide – Discover the City with Miguel</title>
+    <title>Buenos Aires Guide – Discover the City with Miguel</title>
 
-  <meta name="description" content="Explore Buenos Aires with a personalized tourist guide. Discover neighborhoods, tango shows, culture, gastronomy, and essential travel tips.">
-  <meta name="keywords" content="Buenos Aires, Argentina, tourism, tango, neighborhoods, travel guide, tours, culture, sightseeing">
-  <meta name="author" content="Buenos Aires Guide">
+    <meta
+      name="description"
+      content="Explore Buenos Aires with a personalized tourist guide. Discover neighborhoods, tango shows, culture, gastronomy, and essential travel tips."
+    />
+    <meta
+      name="keywords"
+      content="Buenos Aires, Argentina, tourism, tango, neighborhoods, travel guide, tours, culture, sightseeing"
+    />
+    <meta name="author" content="Buenos Aires Guide" />
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://buenos-aires-guide.vercel.app/">
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://buenos-aires-guide.vercel.app/"
+    />
 
- <!-- ===========================
-    OPEN GRAPH (FB, IG, WHATSAPP)
-=========================== -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buenos-aires-guide.vercel.app/">
-<meta property="og:site_name" content="Buenos Aires Guide">
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://buenos-aires-guide.vercel.app/"
+    />
+    <meta property="og:site_name" content="Buenos Aires Guide" />
 
-<meta property="og:title" content="Buenos Aires Guide – Discover the Best of BA">
-<meta property="og:description" content="Your personalized guide to Buenos Aires: neighborhoods, tango, maps, top places, and insider recommendations.">
+    <meta
+      property="og:title"
+      content="Buenos Aires Guide – Discover the Best of BA"
+    />
+    <meta
+      property="og:description"
+      content="Your personalized guide to Buenos Aires: neighborhoods, tango, maps, top places, and insider recommendations."
+    />
 
-<!-- OG IMAGE — DEBE IR SOLO UNA VEZ -->
-<meta property="og:image" content="https://buenos-aires-guide.vercel.app/assets/imagen.png">
-<meta property="og:image:secure_url" content="https://buenos-aires-guide.vercel.app/assets/imagen.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Buenos Aires apartment preview">
+    <!-- OG IMAGE -->
+    <meta
+      property="og:image"
+      content="https://buenos-aires-guide.vercel.app/assets/imagen.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://buenos-aires-guide.vercel.app/assets/imagen.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Buenos Aires apartment preview" />
 
-<!-- Required by Facebook -->
-<meta property="fb:app_id" content="0">
+    <!-- Facebook requirement -->
+    <meta property="fb:app_id" content="0" />
 
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Buenos Aires Guide – Discover the Best of BA"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore Buenos Aires with a personalized cultural and tourist guide."
+    />
+    <meta name="twitter:image" content="/assets/imagen.png" />
 
+    <!-- ICONS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-  <!-- ===========================
-      TWITTER CARDS
-  ============================ -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Buenos Aires Guide – Discover the Best of BA">
-  <meta name="twitter:description" content="Explore Buenos Aires with a personalized cultural and tourist guide.">
-  <meta name="twitter:image" content="/assets/imagen.png">
+    <link rel="manifest" href="/manifest.json" />
 
-  <!-- ===========================
-      FAVICONS
-  ============================ -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <body>
+    <!-- REACT ROOT (indispensable) -->
+    <div id="root"></div>
 
-  <link rel="manifest" href="/manifest.json">
-
-  <meta name="theme-color" content="#ffffff">
-</head>
-
-<body>
-</body>
+    <!-- SCRIPT REACT (Vite, CRA, depende tu proyecto) -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
