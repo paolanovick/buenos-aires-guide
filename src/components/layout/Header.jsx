@@ -12,7 +12,16 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ["bienvenida", "barrios", "lugares", "tango"];
+      const sections = [
+        "hero",
+        "accommodation",
+        "neighborhoods",
+        "places",
+        "tango",
+        "culture",
+        "transport",
+      ];
+
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -53,17 +62,24 @@ const Header = () => {
 
   const navLinks = [
     { name: t("header.home"), id: "hero", href: "/#hero" },
-    { name: t("header.welcome"), id: "bienvenida", href: "/#bienvenida" },
-    { name: t("header.neighborhoods"), id: "barrios", href: "/#barrios" },
-    { name: t("header.places"), id: "lugares", href: "/#lugares" },
+    {
+      name: t("header.accommodation"),
+      id: "accommodation",
+      href: "/#accommodation",
+    },
+    {
+      name: t("header.neighborhoods"),
+      id: "neighborhoods",
+      href: "/#neighborhoods",
+    },
+    { name: t("header.places"), id: "places", href: "/#places" },
     { name: t("header.tango"), id: "tango", href: "/#tango" },
+    { name: t("header.culture"), id: "culture", href: "/#culture" },
+    { name: t("header.transport"), id: "transport", href: "/#transport" },
   ];
 
-  const isActiveLink = (linkId) => {
-    return (
-      activeSection === linkId || (linkId === "hero" && activeSection === "")
-    );
-  };
+  const isActiveLink = (linkId) =>
+    activeSection === linkId || (linkId === "hero" && activeSection === "");
 
   return (
     <header
@@ -83,6 +99,7 @@ const Header = () => {
             Buenos Aires Guide
           </Link>
 
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
@@ -103,10 +120,11 @@ const Header = () => {
             ))}
           </nav>
 
+          {/* LANG SWITCH */}
           <div className="hidden md:flex items-center gap-2">
             <button
               onClick={() => changeLanguage("es")}
-              className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+              className={`text-sm font-medium uppercase tracking-wider ${
                 i18n.language === "es"
                   ? "text-secondary"
                   : "text-gray-400 hover:text-secondary"
@@ -117,7 +135,7 @@ const Header = () => {
             <span className="text-gray-300">|</span>
             <button
               onClick={() => changeLanguage("en")}
-              className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+              className={`text-sm font-medium uppercase tracking-wider ${
                 i18n.language === "en"
                   ? "text-secondary"
                   : "text-gray-400 hover:text-secondary"
@@ -127,6 +145,7 @@ const Header = () => {
             </button>
           </div>
 
+          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-primary hover:text-secondary transition-colors"
@@ -157,6 +176,7 @@ const Header = () => {
           </button>
         </div>
 
+        {/* MOBILE NAV */}
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
             <div className="flex flex-col space-y-4">
@@ -175,10 +195,11 @@ const Header = () => {
                 </a>
               ))}
 
+              {/* Mobile Lang */}
               <div className="flex items-center gap-2 pt-2">
                 <button
                   onClick={() => changeLanguage("es")}
-                  className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                  className={`text-sm font-medium uppercase tracking-wider ${
                     i18n.language === "es"
                       ? "text-secondary"
                       : "text-gray-400 hover:text-secondary"
@@ -189,7 +210,7 @@ const Header = () => {
                 <span className="text-gray-300">|</span>
                 <button
                   onClick={() => changeLanguage("en")}
-                  className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                  className={`text-sm font-medium uppercase tracking-wider ${
                     i18n.language === "en"
                       ? "text-secondary"
                       : "text-gray-400 hover:text-secondary"
@@ -207,4 +228,3 @@ const Header = () => {
 };
 
 export default Header;
-

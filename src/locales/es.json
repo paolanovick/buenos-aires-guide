@@ -1,10 +1,12 @@
 {
-  "header": {
+   "header": {
     "home": "Inicio",
-    "welcome": "Bienvenida",
+    "accommodation": "Alojamiento",
     "neighborhoods": "Barrios",
     "places": "Lugares",
-    "tango": "Tango"
+    "tango": "Tango",
+    "culture": "Arte y Cultura",
+    "transport": "Transporte"
   },
   "hero": {
     "title": "Descubrí Buenos Aires",
